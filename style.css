@@ -1,0 +1,182 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F8F9FA; /* Warna latar abu-abu sangat muda */
+    color: #333;
+}
+
+/* 1. Tambahan Wrapper Utama untuk membungkus atas dan bawah */
+.hero-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antara bagian hero atas dan kartu bawah */
+    justify-content: center;
+    min-height: 100vh; /* Membuat hero setinggi layar */
+}
+
+/* Layout Utama Hero Atas (Split 50:50) */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+
+/* --- KOLOM KIRI (Teks) --- */
+.hero-text-content {
+    flex: 1; /* Mengambil 50% ruang */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px; /* Jarak antar elemen seperti Auto Layout */
+}
+
+.badge {
+    background-color: #def5e0;
+    color: #2E7D32;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #800f88; /* Ungu gelap nyaris hitam */
+    font-weight: 800;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: justify; 
+}
+
+/* Tombol CTA (Call to Action) */
+.btn-primary {
+    background-color: #18c873; 
+    color: #fbf8fb;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #09af5f;
+    transform: translateY(-2px); /* Efek tombol terangkat sedikit saat di-hover */
+}
+
+/* --- KOLOM KANAN (Visual) --- */
+.hero-visual {
+    flex: 1; /* Mengambil 50% ruang sisa */
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 420px;
+    background: linear-gradient(135deg, #b487e1, #e136e1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 40px 40px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 2px solid #800f88;
+}
+
+.deskripsi_1 {
+    font-weight: 700;
+    color: #800f88; 
+}
+
+/* --- BAGIAN BAWAH: 3 Kartu Fitur (Dalam 1 Baris) --- */
+.hero-features-bottom {
+    display: flex;
+    flex-direction: row; /* MEMAKSA kartu sejajar menyamping dalam 1 baris */
+    justify-content: center; /* Posisi pas di tengah */
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px; /* Jarak antar kartu */
+    width: 100%;
+}
+
+/* Gaya dasar kartu */
+.feature-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 2px solid #800f88;
+    padding: 12px 24px;
+    border-radius: 50px; /* Bentuk kapsul */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); 
+    cursor: default;
+    transition: all 0.3s ease; 
+    
+    /* KUNCI UTAMA: Ukuran kartu hanya selebar isi teksnya */
+    width: fit-content; 
+}
+
+/* Efek saat di-hover (diarahkan kursor) */
+.feature-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(128, 0, 128, 0.15); 
+    border-color: #800080; 
+}
+
+.feature-card .icon {
+    font-size: 16px;
+}
+
+.feature-card .text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444; 
+}
+
+/* Responsivitas untuk layar HP */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Berubah menjadi tumpuk atas-bawah */
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .hero-text-content {
+        align-items: center; 
+    }
+    
+    .hero-features-bottom {
+        flex-direction: column; /* Di layar HP saja kartu menumpuk ke bawah */
+        gap: 12px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+}
